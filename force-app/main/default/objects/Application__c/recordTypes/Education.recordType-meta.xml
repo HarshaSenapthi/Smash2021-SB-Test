@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Education</fullName>
+    <active>true</active>
+    <label>Education</label>
+    <picklistValues>
+        <picklist>Applicationtype__c</picklist>
+        <values>
+            <fullName>graduation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pg studeis</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>city__c</picklist>
+        <values>
+            <fullName>ban</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>che</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>hyd</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

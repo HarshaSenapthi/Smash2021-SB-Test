@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>BanTeam</name>
+    <queueMembers>
+        <users>
+            <user>harsha@sf.com</user>
+            <user>mandeep@2233sfdc.com</user>
+            <user>satish@2233sfdc.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Application__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>accountloan__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>courseCap__c</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,95 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:actionOverride"
+                access="global" controller="DynamicPageContoller">
+
+     <aura:handler event="force:refreshView" action="{!c.isRefreshed}" />
+    
+    <aura:attribute name="disabled" type="Boolean" default="false" />
+    <aura:attribute name="layoutSections" type="List" />
+    <aura:attribute name="saved" type="Boolean" default="false" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:attribute name="fieldName" type="String" default="StageName" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:card title="">
+        <aura:if isTrue="{!v.showSpinner}">
+            <lightning:spinner />
+        </aura:if>
+        <aura:if isTrue="{!!v.saved}">
+            <lightning:recordEditForm
+                aura:id="editForm"
+                onload="{!c.handleLoad}"
+                onsubmit="{!c.handleSubmit}"
+                onsuccess="{!c.handleSuccess}"
+                objectApiName="Proposal__c">
+                <!-- the messages component is for error messages -->
+                <lightning:messages />
+                
+                <aura:iteration items="{!v.layoutSections}" var="section">
+                    <div class="slds-section slds-is-open">
+                          <div class="slds-p-left_xx-small">
+                              <h3 class="slds-section__title slds-theme_shade">
+                                  <div class="slds-p-left_xx-large">
+                                  <span class="slds-truncate slds-p-horizontal_small" title="Section Title">{!section.label}</span>
+                                  </div>
+                    <!--	<h3 class="slds-section__title" > -->
+                           
+                        </h3>
+                        </div>
+                        
+                        <div class="slds-section__content">
+                            <lightning:layout multipleRows="true" horizontalAlign="space">
+
+                                <aura:iteration items="{!section.lstFields}" var="field">
+                                    <div class="slds-grid slds-gutters">
+                                              <div class="slds-col slds-size_2-of-3">
+           
+                                    <div class="slds-col slds-size_1-of-2">
+                                    
+                                     <div class="slds-p-left_x-large">
+
+                                    <lightning:layoutItem  flexibility="auto" padding="horizontal-medium">
+                                        <aura:if isTrue="{!(!field.isReadOnly)}">
+                                           
+                                            <lightning:inputField fieldName="{!field.fieldName}"  style="width: 350px !important;"/>	
+                                            <aura:set attribute="else">
+                                                
+                                                <lightning:outputField fieldName="{!field.fieldName}" style="width: 350px !important;"/>
+                                                         
+                                            </aura:set>
+                                           
+                                        </aura:if>
+                                    </lightning:layoutItem>
+                                          </div>
+                                            </div>
+                                   </div>
+                                        
+                                          </div> 
+                                    
+                                </aura:iteration>
+                         </lightning:layout>
+              
+                        </div>
+                    </div>
+                          
+                </aura:iteration>
+                <lightning:layout verticalAlign="center" class="x-large">
+                	<lightning:layoutItem padding="around-small" size="12" flexibility="auto"> 
+                        
+                        <div class="slds-m-top_medium">
+                             <Center>
+                        	<lightning:button disabled="{!v.disabled}" variant="brand" type="submit" name="save" label="Save" />
+         <lightning:button variant="brand" type="cancel" name="cancel" label="Cancel" onclick="{!c.onCancel}"/> 
+      <!--     <lightning:button variant="brand" type="submit" name="Save" label="Save" onclick="{!c.saveProposal}" />      -->                  
+                    	 </Center>
+                            </div>
+                       
+                    </lightning:layoutItem>   
+            	</lightning:layout>
+            </lightning:recordEditForm>
+            <aura:set attribute="else">
+                <p>Saved!</p>
+            </aura:set>
+        </aura:if>
+                        
+    </lightning:card>
+</aura:component>

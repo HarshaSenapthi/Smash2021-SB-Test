@@ -1,0 +1,9 @@
+<template>
+    <div id="waiting" if:false={ready}>Loading…</div>
+    <div id="display" if:true={ready}>
+        <div>Account Name: {name}</div>
+        <div>Revenue: {amount}</div>
+        <div>Website: {website}</div>
+        
+    </div>
+</template>

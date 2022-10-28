@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="CaseOwnerController" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+     <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="ErrorMsg" type="String"/>
+    <aura:attribute name="isboolean" type="Boolean" default="true"/>
+    <aura:if isTrue="{!v.isboolean}">
+      <div class="slds-card" style="padding:10px;">
+        <div role="alert" 
+          style="background-color:#fff;color:red;border-radius:0.25rem;font-size: 14px;">
+            {!v.ErrorMsg}
+        </div>
+        </div>      
+    </aura:if>
+</aura:component>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>HydTeam</name>
+    <queueMembers>
+        <users>
+            <user>durga@1234sfdc.com</user>
+            <user>satish@2233sfdc.com</user>
+            <user>suresh@2323sfdc.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Application__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>customer__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>myobject__c</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+    <h1 > Thanks for submit your Details  </h1>
+   
+    
+</aura:component>

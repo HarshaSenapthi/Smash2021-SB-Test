@@ -1,0 +1,11 @@
+<apex:page standardController="Quote__c" extensions="QuoteExtension">
+  <apex:detail />
+  <apex:repeat value="{!bundles}" var="bundle">
+    <apex:pageBlock title="{!bundle.name}">
+      <apex:dataTable width="100%" value="{!bundle.items}" var="item">
+        <apex:column headerValue="Name" value="{!item.name}"/>
+        <apex:column headerValue="Product Code" value="{!item.productcode}"/>
+      </apex:dataTable>
+    </apex:pageBlock>
+  </apex:repeat>
+</apex:page>

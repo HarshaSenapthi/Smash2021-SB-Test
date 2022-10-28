@@ -1,0 +1,6 @@
+<apex:page title="Patterns" controller="invertedhalfpyramid" sidebar="true" >
+    <apex:pageBlock >
+    <apex:outputText value="{!str}" escape="false">
+    </apex:outputText>
+    </apex:pageBlock>
+</apex:page>

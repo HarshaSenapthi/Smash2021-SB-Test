@@ -1,0 +1,81 @@
+<apex:page controller="ChangePriceBook">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en"/>
+        <!-- Import the Design System style sheet -->
+        <apex:slds />
+    </head> 
+ <apex:form >  
+ <script>
+    function idBackDropPreview()
+    {
+    document.getElementById("idDialogPreview").className = document.getElementById("idDialogPreview").className.replace( /(?:^|\s)slds-fade-in-close(?!\S)/g , ' slds-fade-in-open');
+    document.getElementById("idBackDropPreview").className ='slds-backdrop slds-backdrop_open';
+    }
+    function idDialogPreview()
+    {
+    document.getElementById("idDialogPreview").className = document.getElementById("idDialogPreview").className.replace( /(?:^|\s)slds-fade-in-open(?!\S)/g , ' slds-fade-in-close');
+    document.getElementById("idBackDropPreview").className = document.getElementById("idBackDropPreview").className.replace( /(?:^|\s)slds-backdrop_open(?!\S)/g , '');
+    redirectPage();
+    }
+    
+    
+ </script>
+<apex:actionFunction name="redirectPage" action="{!backtoProductPage}" ></apex:actionFunction>
+
+  <div class="slds-scope slds-m-around_xx-large">
+         
+            <!--###### MODAL BOX Start######--> 
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open" id="idDialogPreview">
+                <div class="slds-modal__container">
+                    <!-- ###### MODAL BOX HEADER Start ######-->
+                    <header class="slds-modal__header">
+                    <button  type="button" onclick="idDialogPreview();" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                      <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Close</span>
+                    </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Select Price Book</h2>
+                    </header>
+                    <!--###### MODAL BOX BODY Part Start######-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <apex:outputPanel rendered="{!hasError}" >
+                    <div class="demo-only" style="height: 4rem;">
+                    <div class="slds-notify_container slds-is-relative">
+                    <div class="slds-notify slds-notify_toast slds-theme_error" role="status">
+                    <span class="slds-assistive-text">error</span>
+                    <span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+                    <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#error')}" />
+                    </svg>
+                    </span>
+                    <div class="slds-notify__content">
+                    <h2 class="slds-text-heading_small ">{!errorMessage}</h2>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </apex:outputPanel>    
+                    <Center>
+                    <apex:selectList size="1"  value="{!selected}" styleClass="slds-input slds-select_container slds-combobox__input slds-combobox__input-value slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-media_center">
+                      <apex:selectOptions value="{!getallPriceBooks}"></apex:selectOptions>
+                    </apex:selectList>
+                    </Center>
+                        <br/><br/><br/><br/><br/><br/><br/>
+                    </div>
+                    <!--###### MODAL BOX FOOTER Part Start ######-->
+                    <footer class="slds-modal__footer">
+                          <button onclick="idDialogPreview();" type="button" class="slds-button slds-button_neutral">Cancel</button> &nbsp;&nbsp;
+                          <apex:commandButton styleClass="slds-button slds-button_brand" action="{!updatePriceBook}" value="Save"></apex:commandButton>
+                          
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" id="idBackDropPreview"></div>            
+
+    </div>    
+ </apex:form>
+</apex:page>

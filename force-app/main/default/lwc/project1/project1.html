@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Delete Selected Rows in Datatable" icon-name="utility:recycle_bin_full">
+        <div style="width: auto;">
+        <lightning-input type = "search" onchange = {handleKeyChange} class = "slds-m-bottom_small" label = "Search" >  
+                    </lightning-input>  
+        <template if:true={data}>
+        <lightning-layout>
+        <lightning-layout-Item padding="around-small" size="5">
+        <span><p>&nbsp;<b><i>Selected Records: {recordsCount}</i></b></p></span>
+        </lightning-layout-Item>
+        <lightning-layout-Item padding="around-small" size="7">
+        <lightning-button label={buttonLabel} icon-name="utility:delete" disabled={isTrue}
+        variant="destructive" onclick={deleteRecords}>
+        </lightning-button>
+        </lightning-layout-Item>
+        </lightning-layout>
+        <lightning-datatable data={data} columns={columns} key-field="id" onrowselection={getSelectedRecords}   onrowaction={callRowAction}>
+        </lightning-datatable><br/>
+        <div class="slds-align_absolute-center">
+        <lightning-button label={buttonLabel} icon-name="utility:delete" disabled={isTrue}
+        variant="destructive" onclick={deleteRecords}>
+        </lightning-button>
+        </div>
+        </template>
+        </div>
+        </lightning-card>
+</template>

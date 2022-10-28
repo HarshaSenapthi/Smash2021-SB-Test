@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Shared Style Resource" icon-name="action:script">  
+        <h1 style="color:rebeccapurple ">Share style sheet between comp.</h1>
+        <template for:each={contacts} for:item="con">
+            <div key={con.id} class="card-header">
+                <span class="card-name">{con.Name}</span>
+                <p class="card-title">{con.Title}</p>
+            </div>
+        </template>
+    </lightning-card>
+  </template>

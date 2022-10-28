@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SMASH_Site_Interest__c</fullName>
+    <externalId>false</externalId>
+    <label>SMASH Site Interest</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Annual Fund</fullName>
+                <default>false</default>
+                <label>Annual Fund</label>
+            </value>
+            <value>
+                <fullName>Berkely</fullName>
+                <default>false</default>
+                <label>Berkely</label>
+            </value>
+            <value>
+                <fullName>IIIinois</fullName>
+                <default>false</default>
+                <label>IIIinois</label>
+            </value>
+            <value>
+                <fullName>Morehouse</fullName>
+                <default>false</default>
+                <label>Morehouse</label>
+            </value>
+            <value>
+                <fullName>Stanford</fullName>
+                <default>false</default>
+                <label>Stanford</label>
+            </value>
+            <value>
+                <fullName>UC Davis</fullName>
+                <default>false</default>
+                <label>UC Davis</label>
+            </value>
+            <value>
+                <fullName>UCLA</fullName>
+                <default>false</default>
+                <label>UCLA</label>
+            </value>
+            <value>
+                <fullName>Wayne State</fullName>
+                <default>false</default>
+                <label>Wayne State</label>
+            </value>
+            <value>
+                <fullName>Wharton</fullName>
+                <default>false</default>
+                <label>Wharton</label>
+            </value>
+            <value>
+                <fullName>SMASH Rising</fullName>
+                <default>false</default>
+                <label>SMASH Rising</label>
+            </value>
+            <value>
+                <fullName>Midwest Region</fullName>
+                <default>false</default>
+                <label>Midwest Region</label>
+            </value>
+            <value>
+                <fullName>Bay Area</fullName>
+                <default>false</default>
+                <label>Bay Area</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>city__c</fullName>
+    <externalId>false</externalId>
+    <label>city</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>hyd</fullName>
+                <default>false</default>
+                <label>hyd</label>
+            </value>
+            <value>
+                <fullName>ban</fullName>
+                <default>false</default>
+                <label>ban</label>
+            </value>
+            <value>
+                <fullName>che</fullName>
+                <default>false</default>
+                <label>che</label>
+            </value>
+            <value>
+                <fullName>pune</fullName>
+                <default>false</default>
+                <label>pune</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

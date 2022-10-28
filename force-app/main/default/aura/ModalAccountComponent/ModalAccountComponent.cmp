@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:actionOverride"
+                access="global">
+    <aura:html tag="style">
+   .slds-modal__container{ 
+     height : auto; width: 150%; max-width: 150vh; 
+   } 
+   .modal-body{ 
+     height : 70vh !important; 
+     max-height: 70vh !important; 
+   } 
+   .slds-modal__footer{ 
+     display: inline !important; 
+   }
+</aura:html>
+    <aura:attribute name="strRecId" type="String" />
+    <lightning:overlayLibrary aura:id="overlayLibDemo"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+</aura:component>

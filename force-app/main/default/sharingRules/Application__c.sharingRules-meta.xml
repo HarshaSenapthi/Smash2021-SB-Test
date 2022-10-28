@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>mycriteriarule</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>mycriteriarule</label>
+        <sharedTo>
+            <role>CEO</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Education</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>mysharingrule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>mysharingrule</label>
+        <sharedTo>
+            <role>CEO</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>MarketingTeam</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

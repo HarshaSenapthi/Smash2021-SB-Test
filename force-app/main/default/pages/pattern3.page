@@ -1,0 +1,6 @@
+<apex:page controller="halfpyramidnumbers" sidebar="false" >
+    <apex:pageBlock >
+       <apex:outputText value="{!val}" escape="false">
+    </apex:outputText> 
+    </apex:pageBlock>
+</apex:page>

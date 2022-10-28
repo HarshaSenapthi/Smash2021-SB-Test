@@ -1,0 +1,23 @@
+.card-header{
+    padding: 1rem;
+    background: rgb(1, 124, 97);
+    border-radius: 4px;
+    margin: .5rem;
+    transition: .5s all;
+}
+
+.card-name{
+    font-size: large;
+    color: rgb(226, 11, 47);
+    text-transform: uppercase;
+}
+
+.card-title{
+    margin-top: 8px;
+    font-style: normal;
+    color: white;
+}
+
+.card-header:hover{
+    background: aliceblue;
+}

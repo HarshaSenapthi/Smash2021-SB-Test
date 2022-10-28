@@ -1,0 +1,14 @@
+<template>
+    <div class="row">
+
+        <div class="column" style="float: left; width: 70%; padding: 10px;">
+            <div class="slds-box">
+                <template if:true={accountList.data}>
+                    <c-lwc-child account-list={accountList.data} onaccountselection={onAccountSelection}></c-lwc-child>
+                </template>
+            </div>
+        </div>
+
+     
+    </div>
+</template>

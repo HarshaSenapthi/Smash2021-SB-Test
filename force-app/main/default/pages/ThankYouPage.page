@@ -1,0 +1,4 @@
+<apex:page >
+            
+   <apex:sectionHeader title=" Thanks For Submitting The Details"/> 
+</apex:page>

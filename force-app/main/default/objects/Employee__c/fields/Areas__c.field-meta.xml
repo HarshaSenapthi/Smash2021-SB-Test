@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Areas__c</fullName>
+    <externalId>false</externalId>
+    <label>Areas</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>City__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hi-tech City</fullName>
+                <default>false</default>
+                <label>Hi-tech City</label>
+            </value>
+            <value>
+                <fullName>SR Nagar</fullName>
+                <default>false</default>
+                <label>SR Nagar</label>
+            </value>
+            <value>
+                <fullName>Ameerpet</fullName>
+                <default>false</default>
+                <label>Ameerpet</label>
+            </value>
+            <value>
+                <fullName>Nungambkkam</fullName>
+                <default>false</default>
+                <label>Nungambkkam</label>
+            </value>
+            <value>
+                <fullName>gundy</fullName>
+                <default>false</default>
+                <label>gundy</label>
+            </value>
+            <value>
+                <fullName>Amanjakaray</fullName>
+                <default>false</default>
+                <label>Amanjakaray</label>
+            </value>
+            <value>
+                <fullName>Marathal1</fullName>
+                <default>false</default>
+                <label>Marathal1</label>
+            </value>
+            <value>
+                <fullName>Marathal2</fullName>
+                <default>false</default>
+                <label>Marathal2</label>
+            </value>
+            <value>
+                <fullName>Marathal3</fullName>
+                <default>false</default>
+                <label>Marathal3</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Hyderabad</controllingFieldValue>
+            <valueName>Hi-tech City</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hyderabad</controllingFieldValue>
+            <valueName>SR Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hyderabad</controllingFieldValue>
+            <valueName>Ameerpet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chenni</controllingFieldValue>
+            <valueName>Nungambkkam</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chenni</controllingFieldValue>
+            <valueName>gundy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chenni</controllingFieldValue>
+            <valueName>Amanjakaray</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Beglore</controllingFieldValue>
+            <valueName>Marathal1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Beglore</controllingFieldValue>
+            <valueName>Marathal2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Beglore</controllingFieldValue>
+            <valueName>Marathal3</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

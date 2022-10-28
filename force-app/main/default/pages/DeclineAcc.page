@@ -1,0 +1,28 @@
+<apex:page standardController="Account" lightningStylesheets="true" >
+    <apex:form style="border-style:solid;border-width:4px;
+                      border-color:black;background-image:linear-gradient(to right, #ffffff , #ffffff);margin-left:0px;height:330px">
+        
+                
+     <apex:pageBlock >
+                     
+         
+           <font color="#FFFFFF">
+        <font size="5px">
+             <div id="ct1" style="margin-left:600px;">
+      <apex:image id="theImage" value="{!$Resource.LogoRHR}" width="170" height="100"/>
+            </div>   
+        </font>
+    </font>
+
+         
+    <apex:pageBlockSection columns="1" > 
+        
+        <b>  <apex:inputField id="cbTest2" label="Decline Reason" value="{!Account.Reason_For_Decline__c}" style="width:400px;" required="true"></apex:inputField> </b>  
+         </apex:pageBlockSection>
+              <div align="center" draggable="false" >
+        <apex:commandButton value="Save" action="{!Save}" />
+        <apex:commandButton value="Cancel" action="{!Cancel}"/>
+         </div>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

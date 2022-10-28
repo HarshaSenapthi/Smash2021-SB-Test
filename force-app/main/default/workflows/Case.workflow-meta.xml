@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notify_the_account_owner_when_a_high_priority_case_is_created</fullName>
+        <description>Notify the account owner when a high-priority case is created</description>
+        <protected>true</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>harsha@sf.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notify_Account_Owner_when_High_Priority_Cases</template>
+    </alerts>
+    <rules>
+        <fullName>CaseRecordCreationTASK</fullName>
+        <actions>
+            <name>New_Case_Is_Created</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <formula>Id  &lt;&gt; NULL</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>High-Priority Cases Rule</fullName>
+        <actions>
+            <name>Notify_the_account_owner_when_a_high_priority_case_is_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>High</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.SLA__c</field>
+            <operation>equals</operation>
+            <value>Platinum</value>
+        </criteriaItems>
+        <description>Notify the account owner when a high-priority case is created for accounts with a platinum SLA.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>myexrule</fullName>
+        <actions>
+            <name>newexrule</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>New_Case_Is_Created</fullName>
+        <assignedTo>harsha@sf.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Case.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>In Progress</status>
+        <subject>New Case Is Created</subject>
+    </tasks>
+    <tasks>
+        <fullName>newexrule</fullName>
+        <assignedTo>durga@1234sfdc.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>newexrule</subject>
+    </tasks>
+</Workflow>
